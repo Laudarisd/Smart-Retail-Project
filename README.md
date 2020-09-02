@@ -1,7 +1,7 @@
 Smart-retail
 ============
 
-**In this project, we developed a smart refrigerator. **
+**In this project, we developed a smart refrigerator**
 
 
 
