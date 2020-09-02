@@ -13,8 +13,8 @@ Table of contents
 
 <!--ts-->
 * [Integration](#Integration)
-    * [Load Cell](#Load Cell)
-    * [Raspberri pi](#Raspberri pi)
+    * [Load_Cell](#Load_Cell)
+    * [Raspberri_pi](#Raspberri_pi)
     * [Camera](#Camera)
 * [Test](#Test)
 * [Others]
