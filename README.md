@@ -13,13 +13,12 @@ Table of contents
 
 <!--ts-->
 * [Integration](#Integration)
-  * [Load Cell](#Load Cell)
-  * [Raspberri pi](#Raspberri pi)
-  * [Camera](#Camera)
+    * [Load Cell](#Load Cell)
+    * [Raspberri pi](#Raspberri pi)
+    * [Camera](#Camera)
 * [Test](#Test)
 * [Others]
-  * [DB & AWS](#DB & AWS )
-
+    * [DB & AWS](#DB & AWS )
    
 <!--te-->
 
