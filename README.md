@@ -1,4 +1,4 @@
-Smart-retail
+Smart Retail project 
 ============
 
 **In this project, we developed a smart refrigerator**
