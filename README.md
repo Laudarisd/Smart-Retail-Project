@@ -42,3 +42,17 @@ Table of contents
 
 
 
+```flow
+st=>start:>htttp://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My operation
+sub1=>subroutine: My Subroutine
+cond=>Condition: Yes
+or No?:>http://www.google.com
+io=>input: catch something...
+
+st->op1->Cond
+Cond(yes) ->io->e
+Cond(no)->sub1(right)->op1
+```
+
