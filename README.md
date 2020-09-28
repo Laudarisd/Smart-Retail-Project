@@ -210,9 +210,9 @@ Others
 
 
 
-*DB_AWS
-*Close_open_api
-*Computer_vision
+* DB_AWS
+* Close_open_api
+* Computer_vision
 
 
 
