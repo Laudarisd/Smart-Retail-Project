@@ -19,8 +19,8 @@ Table of contents
 * [Test](#Test)
 * [Others](#Others)
     * [DB_AWS](#DB_AWS )
-    * [Close_open_api](Close_open_api)
-    * [Computer_vision](Computer_vision)
+    * [Close_open_api](#Close_open_api)
+    * [Computer_vision](#Computer_vision)
    
 <!--te-->
 
