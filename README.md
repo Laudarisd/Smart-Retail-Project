@@ -164,7 +164,7 @@ After completing setup, we do [calibration]()
 
 Test
 =====
- Main part of the project is to combine two results (load cell and AI) and visualize it on the screen when customer buys something.
+ Main part of the project is to combine two results (load cell and AI) and visualize it on the GUI when customer buys something.
 On the screen we gave positive value for buying products and negative value for returning products.
 
 **Images**
@@ -200,7 +200,7 @@ In the following image, we can see that 4th and 5th columns are empty.
 
 
 We used `image classification` model [`efficientnet`]() to classify products of each columns. We only classify the front line of each floor. 
-After classifing each products from `redis server` we combine this result with load cell `weight result`. `Load cell` result analyzes weight of each column based on each classifying result. Whenever there is minus and plus in the columns, it shows the removing and adding produt in the result. 
+
 
 **Images**
 
