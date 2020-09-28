@@ -18,8 +18,9 @@ Table of contents
     * [Load_Cell](#Load_Cell)
 * [Test](#Test)
 * [Others](#Others)
-    * [DB & AWS](#DB & AWS )
-    * [Door close & open api]()
+    * [DB_AWS](#DB_AWS )
+    * [Close_open_api](Close_open_api)
+    * [Computer_vision](Computer_vision)
    
 <!--te-->
 
@@ -29,18 +30,38 @@ Integration
 
 In this project, we integrated load cell, cameras, raspberry pi to make a smart refrigerator like Amazon's smart convenience store.
 
+<table border="0">
+   <tr>
+      <td>
+      <img src="./img/architecture.png" width="100%" />
+      </td>
+   </tr>
+   </table>
+
+
 Raspberri_pi
 =============
 
-First step is to setup raspberry pi to each floors and conect to internet so that we can use ip to connet with `master server` and `redis server`.
+First step is to setup raspberry pi to each floors and conect to internet so that we can use ip address to connet with `master server` and `redis server`.
 
 
 Camera
 =======
 
-After completing reaspberry pi setup, we adjust cameras in each floor and connect to raspberry pi. Based on our requirement, we setup cameras in different angles and positions.
+After completing reaspberry pi setup, we adjust cameras in each floor and connect to raspberry pi. Based on our requirement, we setup cameras in different angles. positions.
 
-Here,`Master respberry pi` handles all captures and sends to redis to test image `classification` model. [`Camera python file`]() setup :
+`Master respberry pi` handles all captures in sub raspberry pi and sends all images to redis to test image `classification` model. [`Camera python file`]() setup :
+
+**Some setting in rasppery pi cam**
+
+```
+r = redis.Redis(host='ip',
+                port= port id ,
+                db=2,
+                username='username',
+                password=keys.get('redis', os.path.join(os.path.dirname(sys.argv[0]), 'keys')))
+```
+
 
 ```
 def cam_set(cap):
@@ -124,16 +145,16 @@ for d in config.refrigerators['device_list']:
 
 After completing setup, we do [calibration]()
 
+
+**Sample images**
+
 <table border="0">
    <tr>
       <td>
-      <img src="./Source/Data_collection/08181_product_w_1_1.png" width="100%" />
+      <img src="./img/1.jpg" width="100%" />
       </td>
       <td>
-      <img src="./Source/Data_collection/08181_product_w_2_1.png" width="100%" />
-      </td>
-      <td>
-      <img src="./Source//Data_collection/08181_product_w_2_3.png" width="100%" />
+      <img src="./img/2.jpg" width="100%" />
       </td>
    </tr>
    </table>
@@ -143,16 +164,56 @@ After completing setup, we do [calibration]()
 
 Test
 =====
- Main part of the project is to combine two results (load cell and AI) and visualize it automatically on the screen when customer buys something.
+ Main part of the project is to combine two results (load cell and AI) and visualize it on the screen when customer buys something.
+On the screen we gave positive value for buying products and negative value for returning products.
+
 **Images**
 
+<table border="0">
+   <tr>
+      <td>
+      <img src="./img/3.jpg" width="100%" />
+      </td>
+      <td>
+      <img src="./img/4.jpg" width="100%" />
+      </td>
+   </tr>
+   </table>
 
-**Results Integrations**
+-First image - We can see that  `2 mountain can (power can )` are removed from the second floor 1st position. 
+-Second image - We can see `negative value` while products are return.
+
+
+Another part of the project is to detect empty columns. 
+
+**Images**
+ 
+In the following image, we can see that 4th and 5th columns are empty.
+
+<table border="0">
+   <tr>
+      <td>
+      <img src="./img/5.jpg" width="100%" />
+      </td>
+   </tr>
+   </table>
+
 
 We used `image classification` model [`efficientnet`]() to classify products of each columns. We only classify the front line of each floor. 
 After classifing each products from `redis server` we combine this result with load cell `weight result`. `Load cell` result analyzes weight of each column based on each classifying result. Whenever there is minus and plus in the columns, it shows the removing and adding produt in the result. 
 
 **Images**
+
+Others
+========
+
+
+
+
+*DB_AWS
+*Close_open_api
+*Computer_vision
+
 
 
 
