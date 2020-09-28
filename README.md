@@ -33,7 +33,7 @@ In this project, we integrated load cell, cameras, raspberry pi to make a smart 
 <table border="0">
    <tr>
       <td>
-      <img src="./img/architecture.png" width="100%" />
+      <img src="./img/8.png" width="100%" />
       </td>
    </tr>
    </table>
